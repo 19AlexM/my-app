@@ -51,15 +51,8 @@ export default function Counter() {
     <h1 style={header1}><b>CLICKGAME</b></h1>
 
     <p style={input}>You clicked <b> {count}</b> times</p>
-      <button style={buttonstyle} onClick={() => {
-        if(count >= 9){ 
-          router.push('/');
-          alert('Error occured!');
-          throw new Error('Cannot handle 2 digit numbers'); 
-
-          }else{
-            setCount(count + 1)}}
-          }>Click me</button>
+      <button style={buttonstyle} onClick={() => {setCount(count + 1)}}
+          >Click me</button>
 
     <br />
 

@@ -95,6 +95,9 @@ export default function Page() {
     <br />
     <button  className="button-24" type="button" onClick={() => router.push('/ThirdPartyjs')}>
     Script Components
+    </button><br/>
+    <button  className="button-24" type="button" onClick={() => router.push('/First')}>
+    First Dashboard
     </button>
     <br />
   

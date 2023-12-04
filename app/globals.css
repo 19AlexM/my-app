@@ -22,7 +22,6 @@ button{
   padding-top: 16px; 
 }
 
-
 .twitterfeed { display: table-cell;  vertical-align: top; width: 100vw; }
 .twitter-timeline {height: 400px !important; }
 
@@ -67,7 +66,6 @@ button{
     float: none;
   }
 }
-
 
 /* CSS */
 .button-24 {
@@ -133,4 +131,31 @@ button{
     margin: 0;
     padding: 14px;
   }
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  font-size: 1.25rem;
+}
+
+body {
+  margin: 0;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+path {
+  fill: #2a354d;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+section p{
+  background-color: #838383;
 }
