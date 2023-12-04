@@ -35,9 +35,11 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-Google SEO
+## Google SEO
 
+```bash
 <head>
     <title>Brandon's Baseball Cards - Buy Cards, Baseball News, Card Prices</title>
     <meta name="description" content="Brandon's Baseball Cards provides a large selection of vintage and modern baseball cards for sale. We also offer daily baseball news and events.">
 </head>
+```
