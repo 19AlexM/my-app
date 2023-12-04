@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Google SEO
 
-##<head>
-##    <title>Brandon's Baseball Cards - Buy Cards, Baseball News, Card Prices</title>
-##    <meta name="description" content="Brandon's Baseball Cards provides a large selection of vintage and modern baseball cards for sale. We also offer daily baseball news and events.">
-##</head>
+<head>
+    <title>Brandon's Baseball Cards - Buy Cards, Baseball News, Card Prices</title>
+    <meta name="description" content="Brandon's Baseball Cards provides a large selection of vintage and modern baseball cards for sale. We also offer daily baseball news and events.">
+</head>
