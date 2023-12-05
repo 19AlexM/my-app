@@ -39,7 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ```bash
 <head>
-    <title>Brandon's Baseball Cards - Buy Cards, Baseball News, Card Prices</title>
+    <title> Brandon's Baseball Cards - Buy Cards, Baseball News, Card Prices </title>
     <meta name="description" content="Brandon's Baseball Cards provides a large selection of vintage and modern baseball cards for sale. We also offer daily baseball news and events.">
 </head>
 ```

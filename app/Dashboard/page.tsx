@@ -1,29 +1,15 @@
 'use client'
 
-import { notFound, useRouter } from 'next/navigation'
+import {useRouter } from 'next/navigation'
 import CSS from 'csstype'
 import coop from './pictures/coop.png'
 import Image from 'next/image'
+import React, { useState } from 'react'
 
-export default function Page() {
 
-  //throw new Error('Dashboard test Error: Loading failed');
+export default function Page(this: any) {
 
   const router = useRouter()
-
-  const input: CSS.Properties = {
-    backgroundColor: 'rgba(255, 255, 255, 0.85)',
-    right: 0,
-    bottom: '2rem',
-    margin: `10px`,
-    fontFamily: 'sans-serif',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)',
-    border: "solid black",
-    borderWidth: "0 3px 3px 0",
-    display: 'inline-block',
-    padding: "3px",
-    transform: "rotate(-45deg)"
-  };
 
   const header1: CSS.Properties = {
     backgroundColor: '#102C4E60',
@@ -37,6 +23,14 @@ export default function Page() {
 
   const bild: CSS.Properties = {
     float: "left"
+  };
+
+
+  const [selectedCountry, setSelectedCountry] = useState('');
+  
+  const handleChange = (e: { target: { value: any } }) => {
+    const selectedValue = e.target.value;
+    setSelectedCountry(selectedValue);
   };
 
   return (
@@ -60,20 +54,35 @@ export default function Page() {
 
       <h1 style={header1}><b>Dashboard</b></h1>
       <br />
-      
-    <button  className="button-24" type="button" onClick={() => router.push('/Dashboard')}>
-      Dashboard
-    </button>/<button  className="button-24" type="button" onClick={() => router.push('/Dashboard/Overview')}>
-      Overview
-    </button>
-    <br />
-    <br />
-    <button  className="button-24" type="button" onClick={() => router.push('/Link')}>
-    Link
-    </button>
-    <br />
-    <br />
-    <button  className="button-24" type="button" onClick={() => router.push('/ClickGame')}>
+
+      <div className='w-1/3'>
+      <select className='w-full' onChange={handleChange}>
+      <option value="">Wähle eine Verzweigung...</option>
+        <option value="db">Dashboard</option>
+        <option value="tp">ThirdParty</option>
+        <option value="aa">Alles andere..</option>
+      </select>
+    </div>
+
+    {selectedCountry === 'db' && (
+            <>
+            <button  className="button-24" type="button" onClick={() => router.push('/Dashboard')}>
+            Dashboard
+            </button>/<button  className="button-24" type="button" onClick={() => router.push('/Dashboard/Overview')}>
+            Overview
+            </button>
+            <br />
+            <br />
+            <button  className="button-24" type="button" onClick={() => router.push('/Link')}>
+            Link
+            </button>
+          </>
+          )}
+
+
+{selectedCountry === 'aa' && (
+            <>
+            <button  className="button-24" type="button" onClick={() => router.push('/ClickGame')}>
     ClickGame
     </button>
     <br />
@@ -96,10 +105,16 @@ export default function Page() {
     <button  className="button-24" type="button" onClick={() => router.push('/ThirdPartyjs')}>
     Script Components
     </button><br/>
-    <button  className="button-24" type="button" onClick={() => router.push('/First')}>
+          </>
+          )}
+       {selectedCountry === 'tp' && (
+            <>
+        <button  className="button-24" type="button" onClick={() => router.push('/First')}>
     First Dashboard
     </button>
     <br />
+          </>
+          )}
   
     </div>
   )

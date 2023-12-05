@@ -1,7 +1,6 @@
 'use client'
 
 import CSS from 'csstype'
-import type { Metadata } from 'next'
 
 import { useRouter } from 'next/navigation'
 import Script from 'next/script';
@@ -28,5 +27,9 @@ export default function Home() {
    <Script src="https://example.com/rootpage-script/afterinteractive/script.js" strategy="afterInteractive" />
   <h1 className="text-3xl font-bold underline">Hello, Next.js!</h1><i style={input}></i><button  className="button-24" type="button" onClick={() => router.push('/Dashboard')}>
     Dashboard
-  </button></>)
+  </button>
+  
+  
+  
+  </>)
 }
