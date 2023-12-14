@@ -1,61 +1,62 @@
-import { BarChart, XAxis, YAxis, Bar, Tooltip, Legend, ResponsiveContainer} from "recharts";
+import { Bar } from 'react-chartjs-2'
 
-const BarChartPlot = () => {
-    const data = [
-      {
-          name: "Jan",
-          high: 4000,
-          low: 2400
-      },
-      {
-          name: "Feb",
-          high: 5000,
-          low: 1500
-      },
-      {
-          name: "Mar",
-          high: 6000,
-          low: 3000
-      },
-      {
-          name: "Apr",
-          high: 6500,
-          low: 4500
-      },
-      {
-          name: "May",
-          high: 7000,
-          low: 2200
-      },
-      {
-          name: "Jun",
-          high: 8000,
-          low: 3500
-      },
-      {
-          name: "Jul",
-          high: 7400,
-          low: 5500
-      },
-    ];
+import { Chart, CategoryScale, LinearScale, BarElement } from 'chart.js'
+import homeStyle from '../../globals.css'
 
+Chart.register(CategoryScale, LinearScale, BarElement)
+const labels = ['1', '2', '3', '4', '5', '6'];
+const data = {
+ labels: labels,
+ datasets: [{
+ label: 'dataset',
 
-    return (
-        <>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart width={730} height={250} data={data} margin={{ top: 10, right: 30, left: 30, bottom: 5 }}>
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="high" fill="#82ca9d" />
-              <Bar dataKey="low" fill="#FA8072" />
-            </BarChart>
-          </ResponsiveContainer>
-        </>
-      );
+ data: [65, 59, 83, 89, 76, 55, 40],
+ backgroundColor: [
+ 'rgba(255, 99, 132, 0.2)',
+ 'rgba(255, 159, 64, 0.2)',
+ 'rgba(255, 205, 86, 0.2)',
+ 'rgba(75, 192, 192, 0.2)',
+ 'rgba(54, 162, 235, 0.2)',
+ 'rgba(153, 102, 255, 0.2)',
+ 'rgba(201, 203, 207, 0.2)'
 
+        ],
+ borderColor: [
+ 'rgb(255, 99, 132)',
+ 'rgb(255, 159, 64)',
+ 'rgb(255, 205, 86)',
+ 'rgb(75, 192, 192)',
+ 'rgb(54, 162, 235)',
+ 'rgb(153, 102, 255)',
+ 'rgb(201, 203, 207)'
 
-  }
-  
-  export default BarChartPlot;
+        ],
+ borderWidth: 1
+    }]
+};
+
+export default function bar() {
+ displayName: 'Bar Sample with Next.js'
+ 
+ return (
+ 
+ <div className={homeStyle.main}>
+ <h2>Bar Sample with Next.js</h2>
+ <Bar
+ data={data}
+ options={{
+ tooltips: {
+  enabled: true,
+  mode: 'single',
+  callbacks: {
+    label: function (tooltipItems, data) {
+      return tooltipItems.yLabel + ' units';
+    },
+  },
+}
+                    }}
+ />
+ </div>
+        )
+    
+};

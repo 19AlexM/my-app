@@ -25,12 +25,11 @@ export default function Page(this: any) {
     float: "left"
   };
 
-
-  const [selectedCountry, setSelectedCountry] = useState('');
+  const [kategorie, setKategorie] = useState('');
   
   const handleChange = (e: { target: { value: any } }) => {
     const selectedValue = e.target.value;
-    setSelectedCountry(selectedValue);
+    setKategorie(selectedValue);
   };
 
   return (
@@ -57,14 +56,15 @@ export default function Page(this: any) {
 
       <div className='w-1/3'>
       <select className='w-full' onChange={handleChange}>
-      <option value="">Wähle eine Verzweigung...</option>
+      <option value="--">Wähle eine Verzweigung...</option>
         <option value="db">Dashboard</option>
         <option value="tp">ThirdParty</option>
         <option value="aa">Alles andere..</option>
+        <option value="alle">Alle Anzeigen</option>
       </select>
     </div>
 
-    {selectedCountry === 'db' && (
+    {kategorie === ('db' || 'alle') && (
             <>
             <button  className="button-24" type="button" onClick={() => router.push('/Dashboard')}>
             Dashboard
@@ -79,8 +79,7 @@ export default function Page(this: any) {
           </>
           )}
 
-
-{selectedCountry === 'aa' && (
+{kategorie === ('aa' || 'alle') && (
             <>
             <button  className="button-24" type="button" onClick={() => router.push('/ClickGame')}>
     ClickGame
@@ -98,7 +97,7 @@ export default function Page(this: any) {
     <br />
     <br />
     <button  className="button-24" type="button" onClick={() => router.push('/Formular')}>
-    Formular
+    Kontaktformular
     </button>
     <br />
     <br />
@@ -107,7 +106,7 @@ export default function Page(this: any) {
     </button><br/>
           </>
           )}
-       {selectedCountry === 'tp' && (
+       {kategorie === ('tp' || 'alle') && (
             <>
         <button  className="button-24" type="button" onClick={() => router.push('/First')}>
     First Dashboard

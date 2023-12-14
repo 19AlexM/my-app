@@ -4,6 +4,7 @@ import BarChartPlot from "./BarChartPlot";
 import PieChartPlot from "./PieChartPlot";
 import LineChartPlot from "./LineChartPlot";
 import RadarChartPlot from "./RadarChartPlot";
+import DonutPlot from "./DonutPlot";
 import "../../globals.css"
 
 const Charts = () => {
@@ -51,7 +52,8 @@ const Charts = () => {
 
       <section className="flex my-4 gap-3">
         <div className="w-1/2 h-[300px] bg-neutral-400 rounded"><AreaChartPlot/></div>
-        <div className="w-1/2 h-[300px] bg-neutral-400 rounded"><BarChartPlot/></div>
+        <div className=" w-1/2 h-[300px] bg-neutral-400 rounded"><PieChartPlot/></div>
+
       </section>
 
       <section className="flex my-4 gap-2">
@@ -59,7 +61,10 @@ const Charts = () => {
         <div className=" w-1/3 h-[250px] bg-neutral-400 rounded"><LineChartPlot/></div>
         <div className=" w-1/3 h-[250px] bg-neutral-400 rounded"><RadarChartPlot/></div>
       </section>
-
+      <section className="flex my-4 gap-2">
+      <div className="w-1/2 h-[300px] bg-neutral-400 rounded"><BarChartPlot/></div>
+      <div className="w-1/2 h-[300px] bg-neutral-400 rounded"><DonutPlot/></div>
+      </section>
     </>
   );
 };

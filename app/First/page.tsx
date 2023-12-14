@@ -15,13 +15,13 @@ export default function Home() {
   return (
     <>
     <div className="header">
-<Image
+  <a href='/'><Image
       src={coop}
       width={200}
       height={200}
       alt="Coop Logo"
       style={bild}
-    />
+    /></a>
   <div className="header-right">
     <a className="active" href="#home">Home</a>
     <a href="#contact">Contact</a>
